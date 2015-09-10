@@ -1,0 +1,197 @@
+
+<head>
+	
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.css">
+  <link rel="stylesheet" type="text/css" href="/css/style.css">
+</head>
+
+<p><%= views %></p>
+
+<body ng-app="app" ng-controller="ModalDemoCtrl">
+
+<div id="header"></div>
+
+<nav class="navbar navbar-default navbar-fixed-top">
+<div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>  
+        <span class="icon-bar"></span>
+      </button>
+            
+      <a class="navbar-brand" href="/">
+      <img src="/images/h2o_logo.svg" height="150%">
+      </a>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+      
+      <li><a data-link="Learn Head" href="/donate" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Donate <span class="caret"></span></a>
+ 
+  	 </li>
+     
+     <li><a data-link="Get Involved Head" href="/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About Us <span class="caret"></span></a>
+
+  	 </li>
+     <li><a data-link="Our Work Head" href="/visit" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Please Visit<span class="caret"></span></a>
+
+  	 </li>
+     <li><a data-link="About Head" href="/involved" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Get Involved<span class="caret"></span></a>
+     	
+  	 </li>
+     <li><a data-link="Contact Head" href="/news" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">News & Events<span class="caret"></span></a>
+
+  	 </li>
+     <li class="hidden-sm"><a data-link="contact" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contact Us<span class="caret"></span></a>
+ 
+     </li>          
+     
+      
+     </ul>
+     <ul class="nav navbar-nav navbar-right">
+ 	  <button style="font-size:1.5em; margin:10px; margin-top:0px; margin-right:30px;" type="button" class="btn btn-danger" ng-click="open()">Donate</button>
+    
+    </div><!-- /.navbar-collapse -->
+    </div>
+</nav>
+
+<!-- <div id="hero" style="background-image: url(https://healingcenterimages.s3.amazonaws.com/siteImages/image3.png);">
+<div class="col-lg-12 banner"> -->
+<div id="hero" style="background-image: url(/images/{{folder}}/image-1.png);">
+<div class="col-lg-12 banner">
+  <div style="display:block;min-height:535px">
+    <div style="text-align:center;" class="pad-top">
+    <div class="tagline">
+    <p style="color:white;font-weight:500;font-size:6em;line-height:1.2em;;" class="main-title">Clean water fresh hope</span></p>
+    </div>
+    <p><a href="#" class="btn btn-lg btn-primary hidden-xs" data-link="Front Why-Water" id="scrollHow" >See How »</a>&nbsp;<a href="/start-a-fundraiser" class="btn btn-lg btn-warning" ng-click="open()">Donate</a></p>
+    </div>
+    <br style="clear:both;">
+  </div>
+</div>
+
+</div>
+
+
+<div>
+    <script type="text/ng-template" id="myModalContent.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Donate</h3>
+        </div>
+        <div class="modal-body">
+            <ul>
+                <li ng-repeat="item in items">
+                    <input id="{{item}}_{{$index + 1}}" type="radio" name="donation" value="{{item}}" 
+            ng-model="selected.item">
+            <label for="{{item}}_{{$index + 1}}"> {{item}} </label>
+                </li>
+            </ul>
+            
+        </div>
+        <div class="modal-footer">
+        <div style="float:left;">Selected: <b>{{ selected.item }}</b></div>
+            <button class="btn btn-primary" type="button" ng-click="ok()">SUBMIT</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
+    
+
+</div>
+
+
+
+<div id="content-wrapper">
+<div class="row">
+<div class="large-image" style="background-image: url(/images/{{folder}}/image-2.jpg);"></div>
+<div class="col-sm-12 center">
+	<h1 class="sponsor-title">Who We Are</h1>
+	<div class="title-teaser">The Water Project's Mission</div>
+</div>
+
+
+
+<div class="col-sm-12">
+<p>H2O Nigeria is a 501(c)(3) non-profit organization unlocking human potential by providing sustainable water projects to communities in sub-Saharan Africa who suffer needlessly from a lack of access to clean water and proper sanitation.</p>
+<p>For over seven years, we have been helping communities gain access to clean, safe water by providing training, expertise and financial support for water project construction through our staff and implementing partners.</p>
+</div>
+</div>
+<br>
+<div class="row">
+<div class="large-image" style="background-image: url(/images/{{folder}}/image-3.jpg);"></div>
+<div class="col-sm-12 center">
+	<h1 class="sponsor-title">What We're Doing</h1>
+	<div class="title-teaser">Providing water to people who can change everything.</div>
+</div>
+
+<div class="col-sm-12">
+<p>Access to safe water is foundational to the development of any community. Clean water restores hope and unlocks potential.</p>
+<p>In sub-Saharan Africa, we help communities dig wells, construct small sub-surface dams, catch the rain, protect fresh-water springs, filter surface water, and maintain proper sanitation and hygiene practices.</p>
+<p>Your support enables robust community mobilization, careful project construction and rigorous long-term follow up and evaluation.
+
+</p><p>Our efforts at home amplify the voices of the poor and the nearly one billion people worldwide who don't have access to clean, safe water - a basic human right.</p>
+<p>As we work to provide water, we're committed to helping people meet their global neighbors and to realize that we all share the same basic needs. We hope to break down stereotypes and the false distinctions between the so-called winners and losers, rich and poor,
+the needy and charitable, by introducing you to the people we serve with the respect and admiration they rightfully deserve.</p>
+<p>We are not heroes. Together with our supporters, we're just trying to be good neighbors by lending a hand to people we know can change the world.</p>
+</div>
+</div>
+<br>
+
+
+
+
+<div class="row">
+	<div class="large-image" style="background-image: url(/images/{{folder}}/image-4.jpg);"></div>
+  <div class="col-sm-12 center">
+	<h1 class="sponsor-title center">How We Help</h1>
+	<div class="title-teaser">People, not water, change everything.</div>
+</div>
+
+
+
+<div class="col-sm-12">
+<p>We equip, train and fund local NGOs (Non-Governmental Organizations) and missionaries with an established in-country presence who can help provide access to clean water and ensure its maintenance over time.</p>
+<p>Smaller, more nimble, and locally-based implementation partners are incredibly effective and efficient at providing sustainable clean water solutions.</p>
+<p>Together with our staff, they identify, implement, report on and follow up with every project. We then share learnings across all our programs. <br></p>
+
+</div>
+</div>
+
+
+
+
+
+
+
+
+ </div>
+ </div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.3/angular-resource.min.js"></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular-animate.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.13.4.js"></script>
+<script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+<!-- AngularFire -->
+<script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+<script src="/js/app.js"></script>
+<script src="/js/modal/modal.js"></script>
+<script src="/js/guidResource.js"></script>
+<script src="/js/userResource.js"></script>
+<script src="/js/entryResource.js"></script>
+<script src="/js/eligibilityResource.js"></script>
+<script src="/js/guidCtrl.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<script src="//use.typekit.net/xth5ngt.js"></script>
+<script>try{Typekit.load({ async: true });}catch(e){}</script>
+</body>
