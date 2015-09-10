@@ -7,7 +7,6 @@ var dbConfig = require('./server/routes/index.js')['mongo'];
 
 require('./server/express.js')(app, config);
 
-// dbConfig.connect(config);
 require(dbConfig.routes)(app);
 
 app.listen(config.port);	
