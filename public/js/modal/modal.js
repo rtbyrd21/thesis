@@ -76,7 +76,7 @@ angular.module('modal').controller('ModalInstanceCtrl', function ($scope, $modal
 	  // the message is automatically added to our Firebase database!
 	  $scope.addMessage = function() {
 	    $scope.messages.$add({
-	      data
+	      data:data
 	    });
 
 			    
