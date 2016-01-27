@@ -4,13 +4,66 @@ body{
 	font-family: "museo-slab";
 }
 
+.col-md-5{
+  p{
+    padding: 0 4em;
+    color: #565a5c;
+    font-size: .9em;
+  }
+}
+
+.title-teaser{
+  padding: 1em 3.5em;
+  color: #7b0051;
+  font-weight: 700;
+}
+
 #header{
 	height:50px;
 	background-color: white;
 }
 
+#wrapper{
+  padding-top: 100px;
+}
+
+.sponsor-title{
+    background-color: #00d1c1;
+    padding: 10px;
+    padding-left: 42px;
+    color: white;
+    margin-top: 0px;
+}
+
+.square-image{
+  background-size: cover;
+  height:100%;
+}
+
 #hero{
 	height:600px;
+  position: relative;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.button-container{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.tagline-container{
+  margin-top: 25%;
+  .main-title{
+    color:white;
+    font-size: 3em;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(#ffb400, .7);
+    padding: 10px 50px;
+  }
 }
 
 #hero { 
@@ -37,7 +90,7 @@ body{
 }
 
 .navbar-default{
-	background-color:white !important;
+	background-color: rgba(white,.9) !important;
 }
 
 ul, li, a, p, h1, h3{
@@ -57,6 +110,8 @@ h1{
 
 .tagline{
   text-shadow: 0px 0px 10px black;
+  position: absolute;
+  bottom:50px;
 }
 .navbar{
   padding-top:10px;
@@ -134,7 +189,47 @@ input[type="checkbox"]:checked + label:before {
   border-color: #000;  /* Checkbox Checked */
 } 
 
-p{
+.modal-body{
+  textarea{
+    width:100%;
+    min-height: 100px;
+  }
+}
+
+.navbar-header{
+  img{
+    width: 150px;
+    margin-left: 20px;
+  }
+}
+
+.btn-danger {
+    color: #fff;
+    background-color: #ff5a5f;
+     border-color: #ff5a5f; 
+     border-radius: 0px;
+}
+
+.btn-warning, .btn-primary{
+  border-radius: 0px;
+  border: none;
+}
+
+.btn-primary{
+  background-color: rgb(140, 224, 113);
+  &:hover{
+     background-color: darken(rgb(140, 224, 113), 30%);
+  }
+}
+
+.btn-warning{
+  background-color: #ffb400;
+  &:hover{
+     background-color: darken(#ffb400, 10%);
+  }
+}
+
+/*p{
   margin:0px 150px;
   padding-top:20px;
-}
+}*/

@@ -2,7 +2,8 @@ var modalApp = angular.module("modal", ["ui.bootstrap.modal", "firebase"]);
 
 modalApp.controller('ModalDemoCtrl', function ($scope, $modal, $log, $rootScope) {
 
-  $scope.items = ['$5', '$25', '$100', '$500', '$1000', 'No thanks, not at this time.'];
+  $scope.items = ['$5', '$10', '$25', '$50', 'No thanks, not at this time.'];
+  $scope.itemsTwo = 'ok';
 
   $scope.animationsEnabled = true;
 
@@ -26,6 +27,34 @@ modalApp.controller('ModalDemoCtrl', function ($scope, $modal, $log, $rootScope)
       $log.info('Modal dismissed at: ' + new Date());
     });
   };
+
+
+    $rootScope.openTwo = function (size) {
+
+    var modalInstance = $modal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'myModalContentTwo.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.itemsTwo;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (comments) {
+      // $scope.selected = selectedItem;
+      console.log(comments);
+    }, function () {
+      console.log($scope);
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
+
+
+
+
 
   $scope.toggleAnimation = function () {
     $scope.animationsEnabled = !$scope.animationsEnabled;
@@ -58,35 +87,57 @@ window.setInterval(function()
 // Please note that $modalInstance represents a modal window (instance) dependency.
 // It is not the same as the $modal service used above.
 
-angular.module('modal').controller('ModalInstanceCtrl', function ($scope, $modalInstance, items, $firebaseArray) {
+angular.module('modal').controller('ModalInstanceCtrl', function ($scope, $modalInstance, items, $firebaseArray, $modal, $rootScope) {
 
   $scope.items = items;
   $scope.selected = {
     item: $scope.items[0]
   };
 
+
+
+
   $scope.ok = function () {
     $modalInstance.close($scope.selected.item);
-    var data = {"folder": $scope.folder, "amount": $scope.selected.item, "time":elapsed};
+    $scope.data = {"folder": $scope.folder, "amount": $scope.selected.item, "time":elapsed};
+    $rootScope.data = $scope.data;
+    $scope.okAgain();
+	  
 
-     var ref = new Firebase('https://thesis-eyes.firebaseio.com/pilot');
-	  // create a synchronized array
-	  $scope.messages = $firebaseArray(ref);
-	  // add new items to the array
-	  // the message is automatically added to our Firebase database!
-	  $scope.addMessage = function() {
-	    $scope.messages.$add({
-	      data:data
-	    });
+  };
 
-			    
-	  };
+  $scope.okAgain = function(){
 
-	  $scope.addMessage();
+    
+    $rootScope.openTwo();
 
+  }
+
+  $scope.sendData = function () {
+
+    var completeData = angular.extend({}, $rootScope.data, {"comments": $scope.comments});
+    console.log(completeData);
+
+    var ref = new Firebase('https://thesis-eyes.firebaseio.com/pilot');
+    // create a synchronized array
+    $scope.messages = $firebaseArray(ref);
+    // add new items to the array
+    // the message is automatically added to our Firebase database!
+    $scope.addMessage = function() {
+      $scope.messages.$add({
+        data:completeData
+      });
+
+          
+    };
+    $scope.addMessage();
+    $modalInstance.dismiss();
   };
 
   $scope.cancel = function () {
     $modalInstance.dismiss('cancel');
   };
+
+
 });
+

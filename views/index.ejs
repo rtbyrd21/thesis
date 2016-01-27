@@ -22,35 +22,17 @@
         <span class="icon-bar"></span>
       </button>
             
-      <a class="navbar-brand" href="/">
-      <img src="/images/h2o_logo.svg" height="150%">
-      </a>
+
+      <img src="/images/h2o_logo.svg">
+
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
 
-      
-      <li><a data-link="Learn Head" href="/donate" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Donate <span class="caret"></span></a>
- 
-  	 </li>
      
-     <li><a data-link="Get Involved Head" href="/about" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">About Us <span class="caret"></span></a>
-
-  	 </li>
-     <li><a data-link="Our Work Head" href="/visit" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Please Visit<span class="caret"></span></a>
-
-  	 </li>
-     <li><a data-link="About Head" href="/involved" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Get Involved<span class="caret"></span></a>
-     	
-  	 </li>
-     <li><a data-link="Contact Head" href="/news" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">News & Events<span class="caret"></span></a>
-
-  	 </li>
-     <li class="hidden-sm"><a data-link="contact" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Contact Us<span class="caret"></span></a>
- 
-     </li>          
+        
      
       
      </ul>
@@ -64,17 +46,20 @@
 <!-- <div id="hero" style="background-image: url(https://healingcenterimages.s3.amazonaws.com/siteImages/image3.png);">
 <div class="col-lg-12 banner"> -->
 <div id="hero" style="background-image: url(/images/{{folder}}/image-1.png);">
-<div class="col-lg-12 banner">
-  <div style="display:block;min-height:535px">
-    <div style="text-align:center;" class="pad-top">
-    <div class="tagline">
-    <p style="color:white;font-weight:500;font-size:6em;line-height:1.2em;;" class="main-title">Clean water fresh hope</span></p>
+
+
+    <div class="tagline-container">
+      <p class="main-title">Clean water fresh hope</span></p>
+
+<!--       <div class="button-container">
+      <a href="#" class="btn btn-lg btn-primary hidden-xs" data-link="Front Why-Water" id="scrollHow" >See How »</a>&nbsp;<a ng-click="open()" class="btn btn-lg btn-warning" ng-click="open()">Donate</a>
+      </div> -->
+
     </div>
-    <p><a href="#" class="btn btn-lg btn-primary hidden-xs" data-link="Front Why-Water" id="scrollHow" >See How »</a>&nbsp;<a ng-click="open()" class="btn btn-lg btn-warning" ng-click="open()">Donate</a></p>
-    </div>
-    <br style="clear:both;">
-  </div>
-</div>
+
+    
+
+
 
 </div>
 
@@ -101,67 +86,79 @@
         </div>
     </script>
 
+
+      <script type="text/ng-template" id="myModalContentTwo.html">
+        <div class="modal-header">
+            <h3 class="modal-title">Donate</h3>
+        </div>
+        <div class="modal-body">
+        <p>Could you please briefly explain the content of the website. This can be as little as one or two sentences.</p>
+          <div class="form-group">
+            <textarea ng-model="comments"></textarea>
+            </div>
+            
+        </div>
+        <div class="modal-footer">
+            <button class="btn btn-primary" type="button" ng-click="sendData()">SUBMIT</button>
+            <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+        </div>
+    </script>
+
     
 
 </div>
 
 
 
-<div id="content-wrapper">
+<div id="wrapper">
 <div class="row">
-<div class="large-image" style="background-image: url(/images/{{folder}}/image-2.jpg);"></div>
-<div class="col-sm-12 center">
+<div class="col-md-7 square-image" style="background-image: url(/images/{{folder}}/image-2.jpg);"></div>
+
+<div class="col-md-5">
 	<h1 class="sponsor-title">Who We Are</h1>
 	<div class="title-teaser">The Water Project's Mission</div>
-</div>
-
-
-
-<div class="col-sm-12">
 <p>H2O Nigeria is a 501(c)(3) non-profit organization unlocking human potential by providing sustainable water projects to communities in sub-Saharan Africa who suffer needlessly from a lack of access to clean water and proper sanitation.</p>
 <p>For over seven years, we have been helping communities gain access to clean, safe water by providing training, expertise and financial support for water project construction through our staff and implementing partners.</p>
+<p>Our efforts at home amplify the voices of the poor and the nearly one billion people worldwide who don't have access to clean, safe water - a basic human right.</p>
 </div>
 </div>
-<br>
-<div class="row">
-<div class="large-image" style="background-image: url(/images/{{folder}}/image-3.jpg);"></div>
-<div class="col-sm-12 center">
-	<h1 class="sponsor-title">What We're Doing</h1>
-	<div class="title-teaser">Providing water to people who can change everything.</div>
-</div>
+<br><hr><br>
 
-<div class="col-sm-12">
+
+<div class="row">
+
+<div class="col-md-5">
+  <h1 class="sponsor-title">What We're Doing</h1>
+  <div class="title-teaser">Providing water to people who can change everything.</div>
 <p>Access to safe water is foundational to the development of any community. Clean water restores hope and unlocks potential.</p>
 <p>In sub-Saharan Africa, we help communities dig wells, construct small sub-surface dams, catch the rain, protect fresh-water springs, filter surface water, and maintain proper sanitation and hygiene practices.</p>
 <p>Your support enables robust community mobilization, careful project construction and rigorous long-term follow up and evaluation.
 
-</p><p>Our efforts at home amplify the voices of the poor and the nearly one billion people worldwide who don't have access to clean, safe water - a basic human right.</p>
+</p>
 <p>As we work to provide water, we're committed to helping people meet their global neighbors and to realize that we all share the same basic needs. We hope to break down stereotypes and the false distinctions between the so-called winners and losers, rich and poor,
 the needy and charitable, by introducing you to the people we serve with the respect and admiration they rightfully deserve.</p>
-<p>We are not heroes. Together with our supporters, we're just trying to be good neighbors by lending a hand to people we know can change the world.</p>
 </div>
+<div class="col-md-7 square-image" style="background-image: url(/images/{{folder}}/image-3.jpg);"></div>
 </div>
-<br>
 
+
+
+<br><hr><br>
 
 
 
 <div class="row">
-	<div class="large-image" style="background-image: url(/images/{{folder}}/image-4.jpg);"></div>
-  <div class="col-sm-12 center">
-	<h1 class="sponsor-title center">How We Help</h1>
-	<div class="title-teaser">People, not water, change everything.</div>
-</div>
+<div class="col-md-7 square-image" style="background-image: url(/images/{{folder}}/image-4.jpg);"></div>
 
-
-
-<div class="col-sm-12">
+<div class="col-md-5">
+  <h1 class="sponsor-title">How We Help</h1>
+  <div class="title-teaser">People, not water, change everything.</div>
 <p>We equip, train and fund local NGOs (Non-Governmental Organizations) and missionaries with an established in-country presence who can help provide access to clean water and ensure its maintenance over time.</p>
 <p>Smaller, more nimble, and locally-based implementation partners are incredibly effective and efficient at providing sustainable clean water solutions.</p>
 <p>Together with our staff, they identify, implement, report on and follow up with every project. We then share learnings across all our programs. <br></p>
+</div>
+</div>
 
-</div>
-</div>
 
 
 

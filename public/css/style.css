@@ -3,12 +3,55 @@ body {
   margin: 0px;
   font-family: "museo-slab"; }
 
+.col-md-5 p {
+  padding: 0 4em;
+  color: #565a5c;
+  font-size: .9em; }
+
+.title-teaser {
+  padding: 1em 3.5em;
+  color: #7b0051;
+  font-weight: 700; }
+
 #header {
   height: 50px;
   background-color: white; }
 
+#wrapper {
+  padding-top: 100px; }
+
+.sponsor-title {
+  background-color: #00d1c1;
+  padding: 10px;
+  padding-left: 42px;
+  color: white;
+  margin-top: 0px; }
+
+.square-image {
+  background-size: cover;
+  height: 100%; }
+
 #hero {
-  height: 600px; }
+  height: 600px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.tagline-container {
+  margin-top: 25%; }
+  .tagline-container .main-title {
+    color: white;
+    font-size: 3em;
+    padding: 0;
+    margin: 0;
+    background-color: rgba(255, 180, 0, 0.7);
+    padding: 10px 50px; }
 
 #hero {
   background: url(images/bg.jpg) no-repeat center center;
@@ -31,7 +74,7 @@ body {
   margin-right: 20px; }
 
 .navbar-default {
-  background-color: white !important; }
+  background-color: rgba(255, 255, 255, 0.9) !important; }
 
 ul, li, a, p, h1, h3 {
   font-family: "museo-slab"; }
@@ -46,7 +89,9 @@ h1 {
   font-family: 'futura-pt'; }
 
 .tagline {
-  text-shadow: 0px 0px 10px black; }
+  text-shadow: 0px 0px 10px black;
+  position: absolute;
+  bottom: 50px; }
 
 .navbar {
   padding-top: 10px;
@@ -116,6 +161,35 @@ input[type="checkbox"]:checked + label:before {
   border-color: #000;
   /* Checkbox Checked */ }
 
-p {
-  margin: 0px 150px;
-  padding-top: 20px; }
+.modal-body textarea {
+  width: 100%;
+  min-height: 100px; }
+
+.navbar-header img {
+  width: 150px;
+  margin-left: 20px; }
+
+.btn-danger {
+  color: #fff;
+  background-color: #ff5a5f;
+  border-color: #ff5a5f;
+  border-radius: 0px; }
+
+.btn-warning, .btn-primary {
+  border-radius: 0px;
+  border: none; }
+
+.btn-primary {
+  background-color: #8ce071; }
+  .btn-primary:hover {
+    background-color: #3e9721; }
+
+.btn-warning {
+  background-color: #ffb400; }
+  .btn-warning:hover {
+    background-color: #cc9000; }
+
+/*p{
+  margin:0px 150px;
+  padding-top:20px;
+}*/
