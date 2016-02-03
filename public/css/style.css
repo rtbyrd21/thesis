@@ -117,6 +117,21 @@ input[type=radio],
 input[type='checkbox'] {
   display: none; }
 
+.agreement-form {
+  margin: 5% 20%; }
+  .agreement-form h5 {
+    margin-top: 3em;
+    font-weight: 800; }
+  .agreement-form h4 {
+    font-weight: 800;
+    color: #00d1c1;
+    font-size: 2em; }
+  .agreement-form p {
+    font-weight: 200; }
+  .agreement-form input[type='checkbox'] {
+    display: inline-block;
+    font-size: 5em; }
+
 input[type=radio] + label {
   display: block; }
 
@@ -188,6 +203,17 @@ input[type="checkbox"]:checked + label:before {
   background-color: #ffb400; }
   .btn-warning:hover {
     background-color: #cc9000; }
+
+.window-of {
+  font-size: .5em;
+  display: inline-block;
+  float: right; }
+
+.quote {
+  padding: 0 4em;
+  padding-top: 1em;
+  font-style: italic;
+  color: #00d1c1; }
 
 /*p{
   margin:0px 150px;

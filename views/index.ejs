@@ -9,6 +9,102 @@
 
 <body ng-app="app" ng-controller="ModalDemoCtrl">
 
+
+<div class="agreement-form" ng-if="!agreed.value">
+
+
+
+<h4>Consent Form</h4>
+<hr>
+
+ <h3>Study: Promoting intrinsically motivated altruistic behavior and decreasing inherent bias through facial perception priming</h3>
+
+<h5>Introduction:</h5>  
+<p>You are being asked to take part in a research study. Please read this paper carefully and ask questions about anything that you do not understand.</p> 
+
+<h5>Who is doing this research study? </h5>  
+<p>The person in charge of this research study is Rob Byrd of the University of Cincinnati (UC) School of Design. He is being guided in this research by professor Mike Zender.</p> 
+
+<h5>What is the purpose of this research study?</h5>  
+<p>The purpose of this study is to determine whether imagery online, specifically of faces with eye-contact can increase online donations.</p> 
+
+<h5>What if you are an employee where the research study is done? </h5>  
+<p>Taking part in this research study is not part of your job. Refusing to be in the study will not affect your job. You will not be offered any special work-related benefits if you take part in this study.</p> 
+
+
+<h5>What if you are a student where the research study is done?</h5>  
+<p>Taking part in this research study is not part of your studies. Refusing to be in the study will not affect your grade. You will not be offered any special benefits if you take part in this study.</p> 
+
+<h5>What will you be asked to do in this research study, and how long will it take?  </h5>  
+<p>Explore a website and choose from a list of several hypothetical donation options upon website content comprehension. It will take about 2-5 minutes.</p> 
+
+<h5>Are there any risks to being in this research study?</h5>  
+<p>It is not expected that you will be exposed to any risk by being in this research study.</p> 
+
+<h5>Are there any benefits from being in this research study? </h5>  
+<p>You will not receive any direct benefit from being in this study. We hope that this research will benefit designers and shed insight on the way imagery can impact a users experience and perception of content.</p> 
+
+<h5>What will you get from being in this research study?</h5>  
+<p>You will not be given anything to take part in this study.</p> 
+
+<h5>Do you have choices about taking part in this research study?</h5>  
+<p>Yes. If you do not want to take part in this research study you may simply not participate.</p> 
+
+<h5>How will your research information be kept confidential?  </h5>  
+<ul>
+<li>Information about you will be kept private by using a randomly generated ID to associate results to.</li>
+<li>Research data is not associated participants’ names. Raw data, not associated with participant names, will be kept for five years. Data from this research study may be published, but you will not be identified by name.</li>
+<li>Agents of the University of Cincinnati may inspect study records for audit or quality assurance purposes.</li>
+</ul>
+
+<h5>What are your legal rights in this research study?</h5>  
+<p>If you have any questions or concerns about this research study, you should contact Rob Byrd at <a href="mailto:byrdrb@mail.uc.edu"> byrdrb@mail.uc.edu</a>. Or you may contact Mike Zender at <a href="mailto:zenderpm@ucmail.uc.edu">zenderpm@ucmail.uc.edu</a>a>.</p> 
+ 
+<p>The UC Institutional Review Board reviews all research projects that involve human participants to be sure the rights and welfare of participants are protected.</p> 
+
+<p>If you have questions about your rights as a participant or complaints about the study, you may contact the UC IRB at (513) 558-5259.  Or, you may call the UC Research Compliance Hotline at (800) 889-1547, or write to the IRB, 300 University Hall, ML 0567, 51 Goodman Drive, Cincinnati, OH 45221-0567, or email the IRB office at <a href="mailto:irb@ucmail.uc.edu">irb@ucmail.uc.edu.</a></p> 
+
+<h5>Do you HAVE to take part in this research study? </h5>  
+<p>To stop being in the study, close your browser window.</p> 
+<br>
+<h4>Agreement:</h4>
+I have read this information and have received answers to any questions I asked.  I give my consent to participate in this research study.
+<br>
+<hr>
+ <label>Click to agree and procceed to study:  </label> 
+    <input type="checkbox" ng-model="agreed.value" ng-change="scrollUp()">
+
+
+
+<!-- <p>Principle Investigator: Rob Byrd</p>
+
+<p>My name is Rob Byrd and I am a graduate student in the School of Design at the University of Cincinnati. I am conducting a research study on how imagery on websites may affect the amount of money given to charitable organizations.</p>
+
+<p>This research study is open to anyone who is an adult 18 years and older.</p>
+
+<p>If you agree to participate, you will only need to spend a brief amount of time, 5 minutes or less, to complete the task given to you.</p>
+
+<p>Today, you will be asked to visit a website with hypothetical content and perform the following actions:</p>
+
+<ul>
+<li>Imagine you saw this site being shared on social media and were inclined to click through to the site.</li>
+<li>Please keep in mind the website is hypothetical and no actual money is being exchanged on the site. With this in mind, please try to mimic the actions you would if this were an actual site that accepted actual donations. Explore the site and its content. </li>
+<li>When you believe that you have a good understanding of the site’s content. Click on one of the “Donate” buttons. You will see a range of options, please select the option that would echo your actions if this were an actual site that you were inclined to visit.</li>
+</ul>
+
+<p>Eligible participants will receive no direct benefit from participation. You will, however, be helping to design more effective non-verbal communication.</p>
+
+<p>If you would like further information about this research study, you can email me at <a href="mailto:byrdrb@uc.edu">byrdrb@uc.edu</a> or call the School of Design at 556-4298.</p> -->
+
+
+
+
+</div>
+
+
+<div ng-if="agreed.value">
+
+
 <div id="header"></div>
 
 <nav class="navbar navbar-default navbar-fixed-top">
@@ -37,7 +133,9 @@
       
      </ul>
      <ul class="nav navbar-nav navbar-right">
- 	  <button style="font-size:1.5em; margin:10px; margin-top:0px; margin-right:30px;" type="button" class="btn btn-danger" ng-click="open()">Donate</button>
+ 	  <button style="font-size:1.5em; margin:10px; margin-top:0px; margin-right:0px;" type="button" class="btn btn-primary" ng-click="open(true)">Donate</button>
+
+    <button style="font-size:1.5em; margin:10px; margin-top:0px; margin-right:30px;" type="button" class="btn btn-warning" ng-click="open(false)">Not Today</button>
     
     </div><!-- /.navbar-collapse -->
     </div>
@@ -67,7 +165,7 @@
 <div>
     <script type="text/ng-template" id="myModalContent.html">
         <div class="modal-header">
-            <h3 class="modal-title">Donate</h3>
+            <h3 class="modal-title">Donate <span class="window-of">window 1 of 2</span></h3>
         </div>
         <div class="modal-body">
             <ul>
@@ -89,7 +187,7 @@
 
       <script type="text/ng-template" id="myModalContentTwo.html">
         <div class="modal-header">
-            <h3 class="modal-title">Donate</h3>
+            <h3 class="modal-title"><span ng-if="donate === false">Not today</span><span ng-if="donate">Donate <span class="window-of">window 2 of 2</span></span></h3>
         </div>
         <div class="modal-body">
         <p>Could you please briefly explain the content of the website. This can be as little as one or two sentences.</p>
@@ -120,8 +218,17 @@
 <p>H2O Nigeria is a 501(c)(3) non-profit organization unlocking human potential by providing sustainable water projects to communities in sub-Saharan Africa who suffer needlessly from a lack of access to clean water and proper sanitation.</p>
 <p>For over seven years, we have been helping communities gain access to clean, safe water by providing training, expertise and financial support for water project construction through our staff and implementing partners.</p>
 <p>Our efforts at home amplify the voices of the poor and the nearly one billion people worldwide who don't have access to clean, safe water - a basic human right.</p>
+
+<div class="quote">
+<hr>
+<h3>safe water - a basic human right</h3>
+<hr>
+</div>
+
 </div>
 </div>
+
+
 <br><hr><br>
 
 
@@ -137,6 +244,13 @@
 </p>
 <p>As we work to provide water, we're committed to helping people meet their global neighbors and to realize that we all share the same basic needs. We hope to break down stereotypes and the false distinctions between the so-called winners and losers, rich and poor,
 the needy and charitable, by introducing you to the people we serve with the respect and admiration they rightfully deserve.</p>
+
+<div class="quote">
+<hr>
+<h3>we all share the same basic needs</h3>
+<hr>
+</div>
+
 </div>
 <div class="col-md-7 square-image" style="background-image: url(/images/{{folder}}/image-3.jpg);"></div>
 </div>
@@ -156,6 +270,13 @@ the needy and charitable, by introducing you to the people we serve with the res
 <p>We equip, train and fund local NGOs (Non-Governmental Organizations) and missionaries with an established in-country presence who can help provide access to clean water and ensure its maintenance over time.</p>
 <p>Smaller, more nimble, and locally-based implementation partners are incredibly effective and efficient at providing sustainable clean water solutions.</p>
 <p>Together with our staff, they identify, implement, report on and follow up with every project. We then share learnings across all our programs. <br></p>
+
+<div class="quote">
+<hr>
+<h3>help provide access to clean water and ensure its maintenance over time</h3>
+<hr>
+</div>
+
 </div>
 </div>
 
@@ -170,7 +291,7 @@ the needy and charitable, by introducing you to the people we serve with the res
  </div>
  </div>
 
-
+</div>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.js"></script>

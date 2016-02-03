@@ -144,6 +144,30 @@ input[type=radio],
 input[type='checkbox'] {
   display: none;
 }
+
+
+.agreement-form{
+  margin: 5% 20%;
+  h5{
+    margin-top: 3em;
+    font-weight: 800;
+  }
+  h4{
+    font-weight: 800;
+    color:#00d1c1;
+    font-size: 2em;
+  }
+  p{
+    font-weight: 200;
+  }
+  input[type='checkbox'] {
+  display: inline-block;
+  font-size: 5em;
+}
+
+}
+
+
 input[type=radio] + label {
   display: block;
 }
@@ -228,6 +252,20 @@ input[type="checkbox"]:checked + label:before {
      background-color: darken(#ffb400, 10%);
   }
 }
+
+.window-of{
+    font-size: .5em;
+    display: inline-block;
+    float: right;
+}
+
+.quote{
+padding: 0 4em;
+padding-top: 1em;
+font-style: italic;
+color:#00d1c1;  
+}
+
 
 /*p{
   margin:0px 150px;

@@ -7,13 +7,32 @@ modalApp.controller('ModalDemoCtrl', function ($scope, $modal, $log, $rootScope)
 
   $scope.animationsEnabled = true;
 
-  $scope.open = function (size) {
 
+
+  $scope.agreed = {
+       value : false
+     };
+
+     // console.log('ok');
+
+    $rootScope.scrollUp = function(){
+      window.scrollTo(0, 0);
+      console.log('okokkok');
+    } 
+
+  $scope.open = function (donate) {
+
+    if(!donate){
+      $rootScope.openTwo();
+      $rootScope.donate = false;
+      return true;
+    }else{
+      $rootScope.donate = true;
+    }
     var modalInstance = $modal.open({
       animation: $scope.animationsEnabled,
       templateUrl: 'myModalContent.html',
       controller: 'ModalInstanceCtrl',
-      size: size,
       resolve: {
         items: function () {
           return $scope.items;
@@ -44,8 +63,6 @@ modalApp.controller('ModalDemoCtrl', function ($scope, $modal, $log, $rootScope)
     });
 
     modalInstance.result.then(function (comments) {
-      // $scope.selected = selectedItem;
-      console.log(comments);
     }, function () {
       console.log($scope);
       $log.info('Modal dismissed at: ' + new Date());
@@ -118,6 +135,11 @@ angular.module('modal').controller('ModalInstanceCtrl', function ($scope, $modal
     var completeData = angular.extend({}, $rootScope.data, {"comments": $scope.comments});
     console.log(completeData);
 
+    if($rootScope.donate == false){
+      completeData.amount = 'not today';
+      completeData.time = elapsed;
+      completeData.folder = $scope.folder;
+    }
     var ref = new Firebase('https://thesis-eyes.firebaseio.com/pilot');
     // create a synchronized array
     $scope.messages = $firebaseArray(ref);
