@@ -17,7 +17,7 @@ modalApp.controller('ModalDemoCtrl', function ($scope, $modal, $log, $rootScope)
 
     $rootScope.scrollUp = function(){
       window.scrollTo(0, 0);
-      console.log('okokkok');
+      $scope.open('directions');
     } 
 
   $scope.open = function (donate) {
@@ -27,7 +27,12 @@ modalApp.controller('ModalDemoCtrl', function ($scope, $modal, $log, $rootScope)
       $rootScope.donate = false;
       return true;
     }else{
-      $rootScope.donate = true;
+      if(donate != 'directions'){
+        $rootScope.donate = true;
+      }else{
+        $rootScope.openThree();
+        return true;
+      }
     }
     var modalInstance = $modal.open({
       animation: $scope.animationsEnabled,
@@ -69,6 +74,27 @@ modalApp.controller('ModalDemoCtrl', function ($scope, $modal, $log, $rootScope)
     });
   };
 
+
+  $rootScope.openThree = function (size) {
+
+    var modalInstance = $modal.open({
+      animation: $scope.animationsEnabled,
+      templateUrl: 'myModalContentThree.html',
+      controller: 'ModalInstanceCtrl',
+      size: size,
+      resolve: {
+        items: function () {
+          return $scope.itemsTwo;
+        }
+      }
+    });
+
+    modalInstance.result.then(function (comments) {
+    }, function () {
+      console.log($scope);
+      $log.info('Modal dismissed at: ' + new Date());
+    });
+  };
 
 
 
@@ -140,7 +166,7 @@ angular.module('modal').controller('ModalInstanceCtrl', function ($scope, $modal
       completeData.time = elapsed;
       completeData.folder = $scope.folder;
     }
-    var ref = new Firebase('https://thesis-eyes.firebaseio.com/pilot');
+    var ref = new Firebase('https://thesis-eyes.firebaseio.com/thesis');
     // create a synchronized array
     $scope.messages = $firebaseArray(ref);
     // add new items to the array
